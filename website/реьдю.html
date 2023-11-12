@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /* Стили для тени и затемнения фона */
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    #overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+    }
+    /* Стили для модального окна */
+    #modal {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 20px;
+      background: #fff;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      z-index: 1;
+    }
+    /* Стили для кнопки закрытия */
+    #close {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<button onclick="openModal()">Открыть модальное окно</button>
+
+<div id="overlay"></div>
+
+<div id="modal">
+  <div id="close" onclick="closeModal()">Закрыть</div>
+  <!-- Содержимое модального окна -->
+  <h2>Модальное окно</h2>
+  <p>Текст и содержимое вашего модального окна здесь.</p>
+</div>
+
+<script>
+  function openModal() {
+    // Отобразить затемнение фона и модальное окно
+    document.getElementById('overlay').style.display = 'block';
+    document.getElementById('modal').style.display = 'block';
+  }
+
+  function closeModal() {
+    // Скрыть затемнение фона и модальное окно
+    document.getElementById('overlay').style.display = 'none';
+    document.getElementById('modal').style.display = 'none';
+  }
+</script>
+
+</body>
+</html>

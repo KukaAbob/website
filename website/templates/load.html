@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Webleb</title>
+    <link href="load.css" rel="stylesheet" type="text/css" />
+    <style>
+      .rating {
+        position: relative;
+      }
+
+      .human-image {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: none;
+      }
+
+      .submit-button {
+        position: relative;
+        z-index: 1;
+      }
+
+      @keyframes grabAndMove {
+        0% {
+          transform: translate(-50%, -50%);
+        }
+        50% {
+          transform: translate(-50%, -50%) rotate(180deg);
+        }
+        100% {
+          transform: translate(-50%, -50%) rotate(360deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <form>
+      <div class="rating">
+        <h1>Please rate our website</h1>
+        <input type="radio" hidden name="rate" id="rating_5" data-idx="0">
+        <label for="rating_5"></label>
+
+        <input type="radio" hidden name="rate" id="rating_4" data-idx="1">
+        <label for="rating_4"></label>
+
+        <input type="radio" hidden name="rate" id="rating_3" data-idx="2">
+        <label for="rating_3"></label>
+
+        <input type="radio" hidden name="rate" id="rating_2" data-idx="3">
+        <label for="rating_2"></label>
+
+        <input type="radio" hidden name="rate" id="rating_1" data-idx="4">
+        <label for="rating_1"></label>
+
+        <!-- Добавляем изображение человечка (пусть это будет изображение "human.png") -->
+        <img src="1.png" alt="human" class="human-image">
+        
+        <!-- Добавляем кнопку "Submit" с обработчиком события -->
+        <input type="button" value="Submit" class="submit-button" onclick="animateAndRedirect()">
+      </div>
+    </form>
+
+    <script>
+      // Функция для анимации и перехода на другой сайт
+      function animateAndRedirect() {
+        // Получаем элементы
+        const submitButton = document.querySelector('.submit-button');
+        const humanImage = document.querySelector('.human-image');
+
+        // Применяем стили для анимации
+        submitButton.style.animation = 'grabAndMove 3s ease-out';
+        humanImage.style.display = 'block';
+
+        // Задержка перед переходом (в данном случае, 3 секунды)
+        setTimeout(() => {
+          // Замените 'https://example.com' на нужный URL
+          window.location.href = 'index.html';
+        }, 3000);
+      }
+    </script>
+  </body>
+</html>

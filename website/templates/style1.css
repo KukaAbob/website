@@ -1,0 +1,63 @@
+body {
+    overflow: hidden;
+  }
+  canvas {
+    background-color: #ffffff;
+  }
+  .button1 {
+    font-size: 1em;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 90%;
+    padding: 1.5em 3em;
+    border-radius: 3em;
+    background-color: #e44d26;
+    color: #77e700;
+    border: none;
+    cursor: pointer;
+    font-family: "Poppins", sans-serif;
+  }
+  div {
+    width: 100px;
+    height: 200px;
+    border: 2px;
+    border:#1164f4;
+    position: absolute;
+  }
+  span {
+    font-size: 1em;
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    left: 620px;
+    top: 50%;
+    padding: 1.5em 3em;
+    border-radius: 3em;
+    background-color: grey;
+    color: rgb(17, 63, 17);
+    border: none;
+    cursor: pointer;
+    font-family: "Poppins", sans-serif;
+}
+.button2 {
+    text-align: center;
+  }
+  
+  .image-container {
+    top: 100px;
+    left: -30px;
+    display: inline-block;
+  }
+  
+  .image-container img {
+    display: block;
+    margin: 0 auto;
+  }
+
+  .button3 {
+    left: 1500px;
+    width: 100px;
+    height: 50px;
+  }
+  
